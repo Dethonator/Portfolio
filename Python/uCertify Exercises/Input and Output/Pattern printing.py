@@ -1,0 +1,6 @@
+#Code to left align 'orange' filled with asterisk(*)
+print('{:*<30}'.format('orange'), end="\n")
+#Code to right align 'banana' filled with asterisk(*)
+print('{:*>30}'.format('banana'), end="\n")
+#Code to centre align 'apple' filled with asterisk(*)
+print('{:*^30}'.format('apple'))

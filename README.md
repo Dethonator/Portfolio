@@ -1,2 +1,2 @@
 # Portfolio
-Portfolio of exercises and own creations
+Portfolio of exercises done througout Training Room course and own creations
