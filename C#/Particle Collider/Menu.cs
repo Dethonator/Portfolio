@@ -53,6 +53,7 @@ namespace ParticleCollider
         public static void ParticleList(Particles particles)
         {
             Clear();
+            WriteLine("AVAILABLE PARTICLES" + "\n");
             foreach (Particle p in particles)
             {
                 WriteLine(p.symbol + "   " + p.name);
