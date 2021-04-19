@@ -1,0 +1,400 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage[pdfbookmark]{tma}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\numberwithin{equation}{section}
+\counterwithout{equation}{section}
+\title{MST125 TMA01}
+\myname{Henry Brooks}
+\mypin{G3868765}
+\mycourse{MST125}
+\mytma{01}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{question}
+\qpart
+\begin{center}
+\textbf{MST125 TMA 01 Question 1}
+
+Henry Brooks G3868765
+\end{center}
+LaTeX
+\qpart
+\qsubpart
+The distance between $A(x_1,y_1)$ and $B(x_2,y_2)$ is given by
+\begin{align*}
+AB &=\sqrt{(x_2-x_1)^2 + (y_2-y_1)^2}.
+\end{align*}
+Hence the distance between $A(-2,4)$ and $B(7,1)$ is
+\begin{align*}
+AB &=\sqrt{(7-(-2))^2 + (1-4)^2}\\
+&= \sqrt{9^2 +(-3)^2}\\
+&= 3\sqrt{10}.
+\end{align*}
+\qsubpart
+The gradient $m$ of the line through $(x_1,y_1)$ and $(x_2,y_2)$ is given by
+\begin{align*}
+m = \frac{y_2-y_1}{x_2-x_1}
+\end{align*}
+Hence, the gradient of the line through $(-2,4)$ and $(7,1)$ is
+\begin{align*}
+m = \frac{1-4}{7-(-2)} &= \frac{-3}{9} = -\frac{1}{3}.
+\end{align*}
+\qsubpart
+The gradient of the line is $-\frac{1}{3}$. Hence $\tan\alpha=-\frac{1}{3}$. Let $\phi$ be the acute angle that the line makes with the negative direction of the $x$-axis. Then
+\begin{align*}
+\tan\phi = \frac{1}{3}.
+\end{align*}
+So $\phi = \tan^{-1}(\frac{1}{3}) = 0.321 ....$
+
+Hence
+\begin{align*}
+\alpha = \pi - 0.321 ... = 2.819....
+\end{align*}
+Therefore the angle $\alpha$ is 2.82 radians (to 2 d.p.).
+\qpart
+Yes. I intend to typeset all of my TMA solutions using \LaTeX. Due to the fact that my overall degree is in Mathematics and having read the first part of Unit 2, I chose to take the time to learn \LaTeX as I could see it's benefits down the line. The textbook-like presentation of the mathematics is very clear and gives it the edge on the other two options. I am quite comfortable with the use of computers and have dabbled with some rudimentary programming languages in the past. I was therefore very comfortable picking up the script required for producing documents in \LaTeX. I have already produced TMA01 for MST124 in this manner.
+\end{question}
+\begin{question}
+\qpart
+The number 386 386 386 386 386 contains five of each of the digits 3, 8 and 6. As such its digit sum is given by
+$5\times3 + 5\times8 + 5\times6 = 15 + 40 + 30 = 85$.
+
+85 is not divisible by 9 and as such neither is 386 386 386 386 386.
+\qpart
+Fermat's little theorem states that
+\[a^{p-1} \equiv 1\Mod{p}\]
+where $p$ is a prime number and $a$ is an integer that is not a multiple of $p$.
+
+By Fermat's little theorem 
+\[5^{36}\equiv 1 \Mod{37}\]
+
+The least residue of $5^{75}$ modulo 37 can be found as follows
+\begin{align*}
+5^{75}&\equiv5^{36\times2+3}\\
+&\equiv(5^{36})^2\times5^3\\
+&\equiv1^2\times125\\
+&\equiv14\Mod{37}
+\end{align*}
+\end{question}
+\newpage
+\begin{question}
+\qpart
+\qsubpart
+\begin{align*}
+66 &= 2 \times 23 + 20\\
+23 &= 1 \times 20 + 3\\
+20 &= 6 \times 3 + 2\\
+3 &= 1 \times 2 + 1\\
+2 &= 2 \times 1 + 0\\
+\\
+\circled{20} &= \circled{66}-2\times\circled{23}\\
+\circled{3} &= \circled{23}-1\times\circled{20}\\
+\circled{2} &= \circled{20}-6\times\circled{3}\\
+\circled{1} &= \circled{3}-1\times\circled{2}\\
+\\
+\circled{1} &= \circled{3}-1\times(\circled{20}-6\times\circled{3})\\
+&= 7 \times \circled{3}-1\times\circled{20}\\
+&= 7\times(\circled{23}-1\times\circled{20})-1\times\circled{20}\\
+&= 7\times\circled{23}-8\times(\circled{66}-2\times{23})\\
+&=23\times\circled{23}-8\times\circled{66}\\
+\\
+23\times\circled{23}&=1+8\times\circled{66}
+\end{align*}
+So 23 is a multiplicative inverse of 23 modulo 66.
+
+The highest common factor of 23 and 66 is 1 and so the solutions to the linear congruence $23x\equiv7v\Mod{66}$ are given by
+\[x\equiv7v\Mod{66}\]
+Where $v=23$. So
+\begin{align*}
+x&\equiv7\times23\Mod{66}\\
+&\equiv161\Mod{66}\\
+&\equiv29\Mod{66}
+\end{align*}
+\qsubpart
+The linear congruence $3x\equiv13\Mod{66}$ has no solutions because
+\[66=22\times3+0\]
+So the highest common factor of 66 and 3 is 3. 13 is prime and is therefore not divisible by 3. As such the linear congruence has no solutions.
+\qsubpart
+The highest common factor of 55 and 66 is found by
+\begin{align*}
+66&=1\times55+11\\
+55&=5\times11+0
+\end{align*}
+As such the H.C.F. of 55 and 66 is 11.
+
+22 is divisible by 11 and so the solutions are given by
+\begin{align*}
+\frac{55}{11}x&\equiv\frac{22}{11}\Mod{\frac{66}{11}}\\
+5x&\equiv2\Mod{6}
+\end{align*}
+The H.C.F. of 5 and 6 is 1.
+
+Trying $x=1,2,3$ etc...
+\begin{align*}
+5\times1&\equiv5\Mod{6}\\
+5\times2&\equiv10\equiv{4}\Mod{6}\\
+5\times3&\equiv15\equiv{3}\Mod{6}\\
+5\times4&\equiv20\equiv{2}\Mod{6}
+\end{align*}
+So the solutions are given by $x\equiv4\Mod{6}$.
+\qpart
+\qsubpart
+\begin{align*}
+7\times15&\equiv105\\
+&\equiv104+1\\
+&\equiv(26\times4)+1\\
+&\equiv1\Mod{26}
+\end{align*}
+Which shows that 7 is indeed a multiplicative inverse of 15 modulo 26.
+\qsubpart
+$E(x)\equiv15x-2\Mod{26}$ has deciphering rule $D(y)\equiv7(y+2)\Mod{26}$ and so
+\begin{align*}
+D(23)&\equiv7\times25\\
+&\equiv175\\
+&\equiv19\Mod{26}\\
+\\
+D(0)&\equiv7\times2\\
+&\equiv14\Mod{26}\\
+\\
+D(15)&\equiv7\times17\\
+&\equiv119\\
+&\equiv15\Mod{26}
+\end{align*}
+19, 14 and 15 give us the word TOP.
+\end{question}
+\begin{question}
+\qpart
+\qsubpart
+\begin{align*}
+9x^2-25y^2-4&=0\\
+9x^2-25y^2&=4\\
+\frac{9}{4}x^2-\frac{25}{4}y^2&=1\\
+\frac{x^2}{(\frac{4}{9})}-\frac{y^2}{(\frac{4}{25})}&=1\\
+\frac{x^2}{(\frac{2}{3})^2}-\frac{y^2}{(\frac{2}{5})^2}&=1
+\end{align*}
+This is therefore the equation for a hyperbola in standard position.
+\qsubpart
+The vertices are found at $(\frac{2}{3},0)$ and $(-\frac{2}{3},0)$.
+
+The asymptotes are found at $y=\pm\frac{\frac{2}{5}}{\frac{2}{3}}x=\pm\frac{6}{10}x=\pm\frac{3}{5}x$
+\qsubpart
+\begin{center}
+\includegraphics[scale=0.3]{Hyperbola.jpg}
+\end{center}
+\qsubpart
+The eccentricity $e$ is given by
+\[e=\sqrt{1+\frac{\frac{4}{25}}{\frac{4}{9}}}=\sqrt{1+\frac{36}{100}}=\sqrt{1+\frac{9}{25}}=\frac{\sqrt{34}}{5}\]
+The foci are found at $(\pm\frac{2}{3}\times\frac{\sqrt{34}}{5},0)=(\pm\frac{2\sqrt{34}}{15},0)$.
+
+The directrices are found at $x=\pm\frac{\frac{2}{3}}{\frac{\sqrt{34}}{5}}=\pm\frac{10}{3\sqrt{34}}=\pm\frac{5\sqrt{34}}{51}$.
+\qsubpart
+\begin{align*}
+x&=\frac{2}{3}\sec{t}\\
+\\
+y&=\frac{2}{5}\tan{t}\\
+\\
+\pi&<t<\frac{3\pi}{2}
+\end{align*}
+\qpart
+\begin{center}
+\includegraphics[scale=0.6]{maximaconic.jpg}
+\end{center}
+\end{question}
+\newpage
+\begin{question}
+\qpart
+$x=4-2t$ and $y=7-t$. So
+\begin{align*}
+x+2t&=4\\
+2t&=4-x\\
+t&=2-\frac{x}{2}\\
+\end{align*}
+Therefore
+\begin{align*}
+y&=7-2+\frac{x}{2}\\
+y&=\frac{1}{2}x+5
+\end{align*}
+\qpart
+$d$, the distance between $A$ and $B$ at time $t$ is given by
+\begin{align*}
+d&=\sqrt{(4-2t-1-t)^2+(7-t-3-2t)^2}\\
+&=\sqrt{(3-3t)^2+(4-3t)^2}\\
+&=\sqrt{9-18t+9t^2+16-24t+9t^2}\\
+&=\sqrt{18t^2-42t+25}
+\end{align*}
+And so $d^2=18t^2-42t+25$
+\qpart
+The two mistakes occur on lines four and six. On line four, an incomplete decimal is displayed with unspecified dots following it. This means that any rounding that may be done on that number is not necessarily accurate. On line six, the student has taken the value of $d^2$ to represent the minimum distance. They should have taken the square root of this figure. The correct solution follows.
+\begin{align*}
+d^2&=18t^2-42t+25\\
+&=18(t^2-\frac{7}{3}t)+25\\
+&=18(t-\frac{7}{6})^2-(\frac{7}{6})^2+25\\
+&=18(t-\frac{7}{6})^2-\frac{49}{36}+25\\
+&=18(t-\frac{7}{6})^2+\frac{851}{36}\\
+&=18(t-\frac{7}{6})^2+23.63\dot{8}
+\end{align*}
+The minimum value of $d^2$ occurs when $t=\frac{7}{6}$.
+
+Hence the minimum distance is $\sqrt{23.63\dot{8}}=4.9$ m (to 1.d.p.).
+\end{question}
+\begin{question}
+\qpart
+\qsubpart
+\begin{center}
+\includegraphics[scale=0.3]{huskies.jpg}
+\end{center}
+\textbf{H} is the force exerted, up the slope, on the sledge by the huskies.\\
+\textbf{F} is friction acting down the slope.\\
+\textbf{W} is the weight of the sledge.\\
+\textbf{N} is the normal reaction.
+\qsubpart
+Let $H = |\textbf{H}|$, $N =|\textbf{N}|$,$F = |\textbf{F}|$ and $W =|\textbf{W}|$.
+\begin{align*}
+\textbf{H}=-H&\textbf{i}=
+\begin{pmatrix}
+-H\\
+0
+\end{pmatrix}\\
+\textbf{N}=N&\textbf{j}=
+\begin{pmatrix}
+0\\
+N
+\end{pmatrix}\\
+\textbf{F}=\mu{N}&\textbf{i}=
+\begin{pmatrix}
+\mu{N}\\
+0
+\end{pmatrix}\\
+\textbf{W}=W\sin{12^{\circ}}\textbf{i}-&W\cos{12^{\circ}}\textbf{j}=
+\begin{pmatrix}
+W\sin{12^{\circ}}\\
+-W\cos{12^{\circ}}
+\end{pmatrix}
+\end{align*}
+Since the sledge is at rest
+\[\textbf{H}+\textbf{N}+\textbf{F}+\textbf{W}=0\]
+This gives
+\[\begin{pmatrix}
+-H\\
+0
+\end{pmatrix}
++
+\begin{pmatrix}
+0\\
+N
+\end{pmatrix}
++
+\begin{pmatrix}
+\mu{N}\\
+0
+\end{pmatrix}
++
+\begin{pmatrix}
+W\sin{12^\circ}\\
+-W\cos{12^\circ}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\]
+which in turn gives
+\begin{align}
+\mu{N}-H+W\sin{12^\circ}&=0\\
+N-W\cos{12^\circ}&=0
+\end{align}
+We will call these equations (1) and (2) as shown.
+
+Equation (2) gives $N=W\cos{12^\circ}$. Substituting for $N$ in equation (1)
+\begin{align*}
+\mu{W}\cos{12^\circ}-H+W\sin{12^\circ}&=0\\
+H&=\mu{W}\cos{12^\circ}+W\sin{12^\circ}
+\end{align*}
+We are given that $\mu=0.15$ and $W=200g$. Taking $g=9.8$ ms$^{-2}$
+\begin{align*}
+H&=0.15\times200\times9.8\cos{12^\circ}+200\times9.8\sin{12^\circ}\\
+&=695.0823086\\
+&=700\text{ N to 2 s.f.}
+\end{align*}
+\qpart
+\qsubpart
+\begin{center}
+\includegraphics[scale=0.3]{foodbowl.jpg}
+\end{center}
+\textbf{T$_1$} is the tension in the left-hand rope.\\
+\textbf{T$_2$} is the tension in the right-hand rope.\\
+\textbf{W} is the weight of the food tub.
+\qsubpart
+Let $T_1 = |\textbf{T$_1$}|$, $T_2 =|\textbf{T$_2$}|$ and $W =|\textbf{W}|$.
+
+We know that $|\textbf{W}|=20g$.
+\begin{align*}
+\textbf{T$_1$}&=-T_1\sin{35^\circ}\textbf{i}+T_1\cos{35^\circ}\textbf{j}=
+\begin{pmatrix}
+-T_1\sin{35^\circ}\\
+T_1\cos{35^\circ}
+\end{pmatrix}\\
+\textbf{T$_2$}&=T_2\sin{55^\circ}\textbf{i}+T_2\cos{55^\circ}\textbf{j}=
+\begin{pmatrix}
+T_2\sin{55^\circ}\\
+T_2\cos{55^\circ}
+\end{pmatrix}\\
+\textbf{W}&=-W\textbf{j}=
+\begin{pmatrix}
+0\\
+-W
+\end{pmatrix}
+\end{align*}
+Since the food tub is at rest
+\[\textbf{T$_1$}+\textbf{T$_2$}+\textbf{W}=0\]
+This gives
+\[
+\begin{pmatrix}
+-T_1\sin{35^\circ}\\
+T_1\cos{35^\circ}
+\end{pmatrix}
++
+\begin{pmatrix}
+T_2\sin{55^\circ}\\
+T_2\cos{55^\circ}
+\end{pmatrix}
++
+\begin{pmatrix}
+0\\
+-W
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+0
+\end{pmatrix}
+\]
+which in turn gives
+\begin{align}
+T_2\sin{55^\circ}-T_1\sin{35^\circ}&=0\\
+T_1\cos{35^\circ}+T_2\cos{55^\circ}-W&=0
+\end{align}
+We will call these equations (3) and (4) as shown.
+
+As we are looking for the tension in the left-hand rope, $T_1$, we can rearrange equation (3) to show
+\[T_2=\frac{T_1\sin{35^\circ}}{\sin{55^\circ}}\]
+and then substitute for $T_2$ in equation (4) giving
+\begin{align*}
+T_1\cos{35^\circ}+\frac{T_1\sin{35^\circ}\cos{55^\circ}}{\sin{55^\circ}}-W&=0\\
+T_1(\cos{35^\circ}+\sin{35^\circ}\cot{55^\circ})-W&=0\\
+T_1&=\frac{W}{\cos{35^\circ}+\sin{35^\circ}\cot{55^\circ}}\\
+&=\frac{20\times9.8}{\cos{35^\circ}+\sin{35^\circ}\cot{55^\circ}}\\
+&=160.5538007\\
+&=160\text{ N to 2 s.f.}
+\end{align*}
+\end{question}
+\end{document}

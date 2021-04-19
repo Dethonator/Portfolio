@@ -1,0 +1,437 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{amsmath}
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)}
+\usepackage[pdfbookmark]{tma}
+\usepackage{mathtools}
+\usepackage{tikz}
+\usepackage{polynom}
+ \input longdiv.tex
+\usepackage{esdiff}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\numberwithin{equation}{section}
+\counterwithout{equation}{section}
+\title{S217 TMA01}
+\myname{Henry Brooks}
+\mypin{G3868765}
+\mycourse{S217}
+\mytma{01}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{question}
+
+\qpart
+
+\qsubpart
+\begin{center}
+\includegraphics[scale=0.5]{TMA01Q1ai.png}
+\end{center}
+
+\qsubpart
+The distance between Oxford and Didcot is represented by the area under the above graph. To estimate this, we can split that area up in to three rough geometric shapes as shown below.
+\begin{center}
+\includegraphics[scale=0.35]{TMA01Q1aii.png}
+\end{center}
+We have two right-angled triangles, with bases of length 240 and heights of 40, and a rectangle with a base of length 120 and height of 40. As such, the estimate of the area under the graph can be given by
+\begin{align*}
+2\times\left(\frac{1}{2}\times240\times40\right)+\left(120\times40\right)&=(240\times40)+(120\times40)\\
+&=9600+4800\\
+&=13400\text{ m}
+\end{align*}
+So the estimated distance between Oxford and Didcot is $13400$ m or $1.34\times10^4$ m.
+
+\qpart
+\begin{center}
+\includegraphics[scale=0.5]{TMA01Q1b.png}
+\end{center}
+\textit{This sketch was generated using a combination of Microsoft Excel and Paint due to my brachial neuritis as previously discussed by email. Please forgive some of the unevenness - this is due to trying to use my left hand when I am right handed.}
+
+\end{question}
+
+\newpage
+
+\begin{question}
+
+\qpart
+
+\qsubpart
+We are given the magnitude of the initial velocity $u = 45$ m s$^{-1}$ and the angle of projection $\theta = 50^{\circ}$. As such, we can write the components of the initial velocity as
+\begin{align*}
+u_x &= u\cos\theta\\
+&= 45\cos50^\circ\\
+&=28.92544244\\
+&=29\text{ m s}^{-1}\text{ to 2 s.f.}
+\end{align*}
+and
+\begin{align*}
+u_y &= u\sin\theta\\
+&= 45\sin50^\circ\\
+&=34.47199994\\
+&=34\text{ m s}^{-1}\text{ to 2 s.f.}
+\end{align*}
+
+\qsubpart
+After initially being struck, the only force acting on the ball is that of gravity. As such, we can state that the $x$-component of the ball's acceleration is $0$ m s$^{-2}$ and the $y$-component is $-9.8$ m s$^{-2}$.
+
+\qpart
+
+\qsubpart
+We need to consider the times when the vertical position is 10 m above the origin. This happens at two points: when the golf ball is first heading upwards and when the golf ball lands on the fairway. We are looking for the time when the ball lands on the fairway which will be the higher of the two values that we find.
+
+Using the equation $s=ut+\frac{1}{2}at^2$ and rearranging
+\[
+\frac{1}{2}at^2+ut-s=0
+\]
+We also know that $s=10$, $u_y=45\sin50^\circ$ and $a_y=-9.8$ which gives us the following quadratic equation
+\[
+(\frac{1}{2}\times-9.8)t^2+(45\sin50^\circ)t - 10 = 0
+\]
+
+\newpage
+Using the quadratic formula
+\[
+t = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\]
+where $a = -4.9$, $b = 45\sin50^\circ$ and $c = -10$
+\begin{align*}
+t&=\frac{-45\sin50^\circ\pm\sqrt{(45\sin50^\circ)^2-196}}{-9.8}\\
+t&=0.3031538995\text{ s and }6.731948129\text{ s}
+\end{align*}
+As stated previously, we are looking for the higher of these two values which is indeed $6.7$ s to 2 significant figures.
+
+\qsubpart
+The maximum height above the tee achieved by the golf ball will be at the point when the vertical ($y$) component of the velocity is equal to $0$.
+
+We can do this using $v^2 = u^2 + 2as$ where $v = 0$ m s$^{-1}$, $u = u_y = 45\sin50^\circ$ m s$^{-1}$ and $a = a_y = -9.8$ m s$^{-2}$. We want to find the value of $s$ and so first let us rearrange our equation
+\begin{align*}
+2as &= v^2 - u^2\\
+s &= \frac{v^2 - u^2}{2a}
+\end{align*}
+and then inputting our values
+\begin{align*}
+s &= \frac{0^2 - (45\sin50^\circ)^2}{2\times-9.8}\\
+&= 60.62850918
+\end{align*}
+and so the maximum height achieved is 61 m to 2 s.f.
+
+\textbf{(UNIT CHECK)}
+\begin{align*}
+\text{m} &= \frac{(\text{m s}^{-1})^2 - (\text{m s}^{-1})^2}{\text{m s}^{-2}}\\
+&=\frac{\text{m}^2\text{ s}^{-2}}{\text{m s}^{-2}}\\
+&=\text{m}
+\end{align*}
+
+\newpage
+
+\qsubpart
+We have already shown that the golf ball lands after 6.7 s and we can therefore use $v = u + at$ to find the $x$- and $y$-components of the velocity at the instant it lands.
+
+Let us first look at $v_x$ since we already know from part a)ii) that $a_x=0$ and can therefore state that $v_x = u_x = 45\cos50^\circ$ m s$^{-1}$.
+
+Next we look at $v_y$. We know that $u_y = 45\sin50^\circ$  m s$^{-1}$, $a_y = -9.8$ m s$^{-2}$ and $t = 6.7$ s. So
+\begin{align*}
+v_y&=45\sin50^\circ + -9.8\times6.7\\
+&=-31.18800006
+\end{align*}
+
+Therefore $v_y=-31$  m s$^{-1}$ to 2 s.f.
+
+We can define the velocity of the golf ball at the instant it lands as a column vector
+\[
+\textbf{\textit{v}}=
+\begin{pmatrix}
+v_x\\
+v_y
+\end{pmatrix}
+=
+\begin{pmatrix}
+45\cos50^\circ\\
+45\sin50^\circ - 65.66
+\end{pmatrix}
+\]
+First we find the magnitude
+\begin{align*}
+|\textbf{\textit{v}}| &= \sqrt{v_x^2+v_y^2}\\
+&=\sqrt{(45\cos50^\circ)^2+(45\sin50^\circ - 65.66)^2}\\
+&= 42.53672023\\
+&=43\text{ m s}^{-1}\text{ to 2 s.f.}
+\end{align*}
+To find the direction of this vector (the angle $\theta$ that it makes with the horizontal)
+\begin{align*}
+\tan\theta &= \frac{v_y}{v_x}\\
+\theta &=\tan^{-1}\frac{v_y}{v_x}\\
+&=\tan^{-1}\left(\frac{45\sin50^\circ - 65.66}{45\cos50^\circ}\right)\\
+&=-47.1554886\\
+&=-47^\circ\text{ to 2 s.f.}
+\end{align*}
+This number is negative because it is taken in relation to the negative $x$-direction and so the angle in relation to the positive $x$-direction is $180-47=133^\circ$ to 2 s.f.
+
+\textbf{(MAGNITUDE CHECK)}The value for the magnitude of the velocity is sensible in that it is occuring at a greater height than the initial velocity - logic dictates that it should be less than the initial velocity which it indeed is by 2 m s$^{-1}$. It is also worth noticing that the value is suitably close to that of the initial velocity to be deemed sensible in this particular scenario.
+\end{question}
+
+\newpage
+
+\begin{question}
+\textit{Please note I am taking the explanation to begin at line 7 ("An ellipse has a...") due to the word limit. Everything surrounding it is cosmetic to give it the appearance of a proper letter.}
+
+Dear Amica,
+
+\qquad I understand that you are interested in Kepler's laws of planetary motion. There are three laws which I will go through for you, but first a quick explanation of some relevant features of ellipses.
+
+\qquad An ellipse has a semimajor axis at its widest point, and a semiminor axis at its narrowest. There are two special points which lie on the major axes of an ellipse that are called foci. These important features are shown below.
+
+\begin{center}
+\includegraphics[scale=0.5]{TMA01Q3.png}
+\end{center}
+\qquad Kepler's first law states that the orbit of each planet in the solar system is an ellipse with the sun at one focus. Earth’s orbit is almost circular meaning that the foci are quite close together.
+
+\qquad Kepler’s second law states that a radial line from the sun to a planet sweeps out equal areas in equal intervals of time. This means that planets in an elliptical orbit move faster when closer to the sun.
+
+\qquad Kepler’s third law states that the square of the orbital period of each planet is proportional to the cube of its semimajor axis. The orbital period of a planet is the time it takes to complete one full circuit of the sun. This tells us that there is a constant that relates this orbital period to the semimajor axis for every planet that orbits the sun.
+
+Cheers
+
+Henry
+
+\end{question}
+
+\begin{question}
+
+\qpart
+The period of oscillation is found by using the equation $T=\frac{2\pi}{\omega}$.
+
+We are given $\omega=2.76 \times 10^3$ s$^{-1}$ and so
+
+\begin{align*}
+T &= \frac{2\pi}{2.76 \times 10^3}\\
+&= 2.276516416 \times 10^{-3}\\
+&= 2.28  \times 10^{-3}\text{ s to 3 s.f.}
+\end{align*}
+
+\qpart
+We are given the function for the displacement
+\[
+x(t)=A\sin(\omega t + \phi)
+\]
+
+From this we can use differentiation to find the function for the velocity
+\begin{align*}
+v(t)&=\diff{x}{t}\\
+&=A\omega\cos(\omega t + \phi)
+\end{align*}
+
+We know that sine and cosine functions oscillate between -1 and 1 so the maximum magnitude of the velocity (the maximum speed) is found when $\cos(\omega t + \phi)=1$. As such, its value is $A\omega$.
+
+We are given $A=1.60$ mm, which when coverted into metres can be written as $A=1.60\times 10^{-3}$ m. We have stated the value of $\omega$ above. So
+\begin{align*}
+A\omega&=(1.6\times 10^{-3})\times(2.76 \times 10^3)\\
+&=1.6\times2.76\\
+&=4.416\\
+&=4.42 \text{ m s}^{-1}\text{ to 3 s.f.}
+\end{align*}
+The maximum speed of the string is therefore 4.42 m s$^{-1}$ to 3 s.f.
+
+\newpage
+
+\qpart
+Using a similar process to part b). we need to once again use differentiation, this time on our velocity function
+\begin{align*}
+a(t)&=\diff{v}{t}\\
+&=-A\omega^2\sin(\omega t + \phi)
+\end{align*}
+Applying the same logic, the maximum magnitude occurs when $\sin(\omega t + \phi)=1$ and so its value is $|-A\omega^2|$.
+\begin{align*}
+|-A\omega^2|&=|(1.6\times 10^{-3})\times(2.76 \times 10^3)^2|\\
+&=12188.16\\
+&=1.22\times 10^4 \text{ m s}^{-2}\text{ to 3 s.f.}
+\end{align*}
+The maximum magnitude of the acceleration of the string is therefore \\$1.22 \times 10^4$ m s$^{-2}$ to 3 s.f. 
+
+\qpart
+To determine the initial values as requested, we need to evaluate our three functions (x(t), v(t) and a(t)) when $t=0$. To do this, we need to add the phase constant to the known values stated above. This is given as $\phi=\frac{\pi}{2}$.
+
+To recap
+\begin{align*}
+x(t)&=A\sin(\omega t + \phi)\\
+v(t)&=A\omega\cos(\omega t + \phi)\\
+a(t)&=-A\omega^2\sin(\omega t + \phi)
+\end{align*}
+So
+\begin{align*}
+x(0)&=A\sin(\phi)\\
+&=(1.60\times 10^{-3})\sin\frac{\pi}{2}\\
+&=1.60\times 10^{-3} \text{ m}\\
+\\
+v(0)&=A\omega\cos(\phi)\\
+&=(1.60\times 10^{-3})(2.76 \times 10^3)\cos\frac{\pi}{2}\\
+&= 0 \text{ m s}^{-1}\\
+\\
+a(0)&=-A\omega^2\sin(\phi)\\
+&=-(1.60\times 10^{-3})(2.76 \times 10^3)^2\sin\frac{\pi}{2}\\
+&=-1.22\times 10^4 \text{ m s}^{-2}
+\end{align*}
+So to summarise, the initial displacement is $1.60\times 10^{-3}$ m, the initial velocity is\\ 0 m s$^{-1}$ and the initial acceleration is $-1.22\times 10^4$ m s$^{-2}$.
+
+\end{question}
+
+\begin{question}
+
+\qpart
+
+\qsubpart
+Stating the given forces in column vector form
+\[
+\textbf{\textit{F}}_1 =
+\begin{pmatrix}
+8.0\times10^7\\
+7.0\times10^7
+\end{pmatrix}
+\text{N}
+\qquad\qquad
+\textbf{\textit{F}}_2 =
+\begin{pmatrix}
+4.0\times10^7\\
+-2.0\times10^7
+\end{pmatrix}
+\text{N}
+\]
+let us define the resultant force as
+\begin{align*}
+\textbf{\textit{F}}_{res} &= \textbf{\textit{F}}_1 + \textbf{\textit{F}}_2\\
+&=
+\begin{pmatrix}
+8.0\times10^7\\
+7.0\times10^7
+\end{pmatrix}
++
+\begin{pmatrix}
+4.0\times10^7\\
+-2.0\times10^7
+\end{pmatrix}
+\\
+&=
+\begin{pmatrix}
+1.2\times10^8\\
+5.0\times10^7
+\end{pmatrix}
+\text{N}
+\end{align*}
+The $x$-component of the resultant force is therefore $1.2\times10^8$ N and the $y$-component is $5.0\times10^7$ N.
+
+\qsubpart
+The magnitude of the resultant force $|\textbf{\textit{F}}_{res}|$ is given by
+\begin{align*}
+|\textbf{\textit{F}}_{res}| &= \sqrt{(1.2\times10^8)^2+(5.0\times10^7)^2}\\
+&=130000000\\
+&=1.3 \times 10^8\text{ N}
+\end{align*}
+
+The angle $\theta$ at which it acts relative to the positive $x$-direction is found by
+\begin{align*}
+\tan\theta &= \frac{5.0 \times 10^7}{1.2 \times 10^8}\\
+\theta&=\tan^{-1}\frac{5.0 \times 10^7}{1.2 \times 10^8}\\
+&=22.61986495^\circ\\
+&=23^\circ\text{ to 2 s.f.}
+\end{align*}
+
+So the magnitude of the resultant force is $1.3\times10^8$ N and it acts at an angle of $23^\circ$ to the positive $x$-direction.
+
+\newpage
+
+\qpart
+To answer this question, we need to use
+\[
+|\textbf{\textit{F}}_{21}|=\frac{Gm_1m_2}{r^2}
+\]
+where $|\textbf{\textit{F}}_{21}|$ is the magnitude of the force due to the gravitational attraction between the asteroid and the Earth, $m_1$ is the mass of the asteroid, $m_2$ is the mass of the Earth, $G$ is Newton's universal gravitational constant and $r$ is the distance between the two bodies in question. \textit{Please note that the negative sign has been removed from the right hand side of the equation because we are dealing with magnitude. The same applies to the square root found below - I am taking }
+
+We are looking to find the value of $r$ that corresponds to $|\textbf{\textit{F}}_{21}|$ taking the same value as the resultant force calculated in a)ii). First we need to rearrange the equation
+\begin{align*}
+|\textbf{\textit{F}}_{21}|r^2 &= Gm_1m_2\\
+r^2&=\frac{Gm_1m_2}{|\textbf{\textit{F}}_{21}|}\\
+r&=\sqrt{\frac{Gm_1m_2}{|\textbf{\textit{F}}_{21}|}}
+\end{align*}
+The values that we have are
+\begin{align*}
+G &= 6.673 \times 10^{-11} \text{ N m}^2\text{ kg}^{-2} \textit{ (taken from the Useful constants sheet)}\\
+m_1&=7.5 \times 10^{12} \text{ kg}\\
+m_2&=\text{M}_\text{E}=5.97\times10^{24}\text{ kg} \textit{ (taken from the Useful constants sheet)}\\
+|\textbf{\textit{F}}_{21}|&=1.3 \times 10^8\text{ N}
+\end{align*}
+So
+\begin{align*}
+r &= \sqrt{\frac{(6.673 \times 10^{-11})(7.5 \times 10^{12})(5.97\times10^{24})}{1.3 \times 10^8}}\\
+&= 4794095527 \text{ m}\\
+&= 4.8 \times10^9 \text{ m to 2 s.f.}\\
+&= 4.8 \times10^6 \text{ km}
+\end{align*}
+
+This distance seems reasonable as it is further out than the Moon ($3.8\times10^5$ km) but not as far as Mars ($5.5\times10^7$ km). \textit{(Distances found with a quick Google search and given to 2 s.f.)}
+
+\textbf{(UNIT CHECK)}
+\begin{align*}
+\text{m}&=\sqrt{\frac{(\text{N m}^2\text{ kg}^{-2})(\text{kg})(\text{kg})}{\text{N}}}\\
+&=\sqrt{\frac{\text{N m}^2}{\text{N}}}\\
+&=\sqrt{\text{m}^2}\\
+&= \text{m}
+\end{align*}
+
+\qpart
+
+\qsubpart
+Newton's second law states \textit{\textbf{F}=m\textbf{a}}. As such
+\[
+|\textbf{\textit{a}}| = \frac{|\textbf{\textit{F}}|}{m}
+\]
+So using the values for the mass and the magnitude of the force as previously stated
+\begin{align*}
+|\textbf{\textit{a}}|&=\frac{1.3 \times 10^8}{7.5 \times 10^{12}}\\
+&=0.000017\dot{3}\\
+&=1.7\times 10^{-5} \text{ m s}^{-2}\text{ to 2 s.f.}
+\end{align*}
+So the magnitude of the acceleration of the asteroid produced by the thrusters is $1.7\times 10^{-5}$ m s$^{-2}$.
+
+Due to the fact that the mass $m$  is a scalar quantity, the direction of the acceleration is the same as the direction of the force, namely $23^\circ$ to the positive $x$-direction.
+
+\qsubpart
+Here we are looking at acceleration in a straight line - in this case, the line is in the direction of the asteroid's motion. 
+
+Using the equation $v=u+at$, we are looking for the value of $t$ that corresponds to a change of $1.0$ m s$^{-1}$ in the speed of the asteroid. As such, if we let $u=0.0$ m s$^{-1}$ then $v=1.0$ m s$^{-1}$.
+
+We have just calculated $a=1.7\times10^{-5}$, so
+\begin{align*}
+v &= u + at\\
+t &= \frac{v-u}{a}\\
+\end{align*}
+and inputting our known values
+\begin{align*}
+t &=\frac{1.0}{1.7\times10^{-5}}\\
+&=58823.\dot{5}29411764705882\dot{3}\\
+&=5.9\times10^4\text{ s to 2 s.f.}
+\end{align*}
+Converting this figure to hours
+\[
+\frac{5.9\times10^4}{60\times60}=16.3\dot8 \text{ hours}
+\]
+So this is 16 hours to 2 s.f. which confirms the accuracy of the figure as stated in the question.
+\end{question}
+
+\newpage
+
+\begin{question}
+
+\qpart
+\begin{center}
+\includegraphics[scale=0.75]{TMA01Q6.png}
+\end{center}
+
+\qpart
+I was more than comfortable with the material in this quiz as most of it was revision. I did, however, get reminded on a couple of occasions to give my answers to the correct number of significant figures - I went through the quiz at such a speed (because I found it relatively easy) that I was often giving answers to full accuracy when not necessarily appropriate.
+
+\end{question}
+
+\end{document}
