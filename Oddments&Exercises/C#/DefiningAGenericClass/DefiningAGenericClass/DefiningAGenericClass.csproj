@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A156BA21-6BC6-47CC-8071-E09E89BB06D0}</ProjectGuid>
+    <ProjectGuid>{BFCFACD2-AD38-408B-BDFA-7DB115FEE65C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DefiningClasses</RootNamespace>
-    <AssemblyName>DefiningClasses</AssemblyName>
+    <RootNamespace>DefiningAGenericClass</RootNamespace>
+    <AssemblyName>DefiningAGenericClass</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Animal.cs" />
+    <Compile Include="Chicken.cs" />
+    <Compile Include="Cow.cs" />
+    <Compile Include="Farm.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuperCow.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

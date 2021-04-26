@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A156BA21-6BC6-47CC-8071-E09E89BB06D0}</ProjectGuid>
+    <ProjectGuid>{02534C9C-C9A2-430E-876C-16087B15CEF7}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DefiningClasses</RootNamespace>
-    <AssemblyName>DefiningClasses</AssemblyName>
+    <RootNamespace>CardClient</RootNamespace>
+    <AssemblyName>CardClient</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -48,7 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CardLibrary\CardLibrary.csproj">
+      <Project>{a5158ee9-148f-4a1c-a1a2-bb9f01a13c0f}</Project>
+      <Name>CardLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

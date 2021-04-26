@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A156BA21-6BC6-47CC-8071-E09E89BB06D0}</ProjectGuid>
+    <ProjectGuid>{19503D3D-2F44-4A94-A7EE-78E3DB2DC6E4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DefiningClasses</RootNamespace>
-    <AssemblyName>DefiningClasses</AssemblyName>
+    <RootNamespace>SortingAList</RootNamespace>
+    <AssemblyName>SortingAList</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonComparerName.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
