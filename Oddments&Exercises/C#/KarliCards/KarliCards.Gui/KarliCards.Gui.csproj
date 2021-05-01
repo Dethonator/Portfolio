@@ -128,6 +128,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -137,9 +138,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CardLibraryMk2\CardLibraryMk2\CardLibraryMk2.csproj">
+    <ProjectReference Include="..\..\CardLibraryMk2\CardLibraryMk2\Ch13CardLib.csproj">
       <Project>{d95c2b11-307a-408a-bf77-615f329be3ae}</Project>
-      <Name>CardLibraryMk2</Name>
+      <Name>Ch13CardLib</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>

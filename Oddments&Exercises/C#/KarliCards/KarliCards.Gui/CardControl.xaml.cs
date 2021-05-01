@@ -24,22 +24,22 @@ namespace KarliCards.Gui
         {
             InitializeComponent();
         }
-        public static DependencyProperty SuitProperty = DependencyProperty.Register("Suit", typeof(CardLibraryMk2.Suit), typeof(CardControl), new PropertyMetadata(CardLibraryMk2.Suit.Club, new PropertyChangedCallback(OnSuitChanged)));
-        public static DependencyProperty RankProperty = DependencyProperty.Register("Rank", typeof(CardLibraryMk2.Rank), typeof(CardControl), new PropertyMetadata(CardLibraryMk2.Rank.Ace));
+        public static DependencyProperty SuitProperty = DependencyProperty.Register("Suit", typeof(Ch13CardLib.Suit), typeof(CardControl), new PropertyMetadata(Ch13CardLib.Suit.Club, new PropertyChangedCallback(OnSuitChanged)));
+        public static DependencyProperty RankProperty = DependencyProperty.Register("Rank", typeof(Ch13CardLib.Rank), typeof(CardControl), new PropertyMetadata(Ch13CardLib.Rank.Ace));
         public static DependencyProperty IsFaceUpProperty = DependencyProperty.Register("IsFaceUp", typeof(bool), typeof(CardControl), new PropertyMetadata(true, new PropertyChangedCallback(OnIsFaceUpChanged)));
         public bool IsFaceUp
         {
             get { return (bool)GetValue(IsFaceUpProperty); }
             set { SetValue(IsFaceUpProperty, value); }
         }
-        public CardLibraryMk2.Suit Suit
+        public Ch13CardLib.Suit Suit
         {
-            get { return (CardLibraryMk2.Suit)GetValue(SuitProperty); }
+            get { return (Ch13CardLib.Suit)GetValue(SuitProperty); }
             set { SetValue(SuitProperty, value); }
         }
-        public CardLibraryMk2.Rank Rank
+        public Ch13CardLib.Rank Rank
         {
-            get { return (CardLibraryMk2.Rank)GetValue(RankProperty); }
+            get { return (Ch13CardLib.Rank)GetValue(RankProperty); }
             set { SetValue(RankProperty, value); }
         }
         public static void OnSuitChanged(DependencyObject source, DependencyPropertyChangedEventArgs args)
@@ -52,20 +52,20 @@ namespace KarliCards.Gui
             var control = source as CardControl;
             control.RankLabel.Visibility = control.SuitLabel.Visibility = control.RankLabelInverted.Visibility = control.TopRightImage.Visibility = control.BottomLeftImage.Visibility = control.IsFaceUp ? Visibility.Visible : Visibility.Hidden;
         }
-        private CardLibraryMk2.Card card;
-        public CardLibraryMk2.Card Card
+        private Ch13CardLib.Card card;
+        public Ch13CardLib.Card Card
         {
             get { return card; }
             private set { card = value; Suit = card.suit; Rank = card.rank; }
         }
-        public CardControl(CardLibraryMk2.Card card)
+        public CardControl(Ch13CardLib.Card card)
         {
             InitializeComponent();
             Card = card;
         }
         private void SetTextColor()
         {
-            var color = (Suit == CardLibraryMk2.Suit.Club || Suit == CardLibraryMk2.Suit.Spade) ? new SolidColorBrush(Color.FromRgb(0, 0, 0)) : new SolidColorBrush(Color.FromRgb(255, 0, 0));
+            var color = (Suit == Ch13CardLib.Suit.Club || Suit == Ch13CardLib.Suit.Spade) ? new SolidColorBrush(Color.FromRgb(0, 0, 0)) : new SolidColorBrush(Color.FromRgb(255, 0, 0));
             RankLabel.Foreground = SuitLabel.Foreground = RankLabelInverted.Foreground = color;
         }
     }

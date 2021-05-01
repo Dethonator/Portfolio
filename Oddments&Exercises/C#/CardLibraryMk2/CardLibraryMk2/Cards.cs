@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CardLibraryMk2
+namespace Ch13CardLib
 {
     public class Cards : List<Card>, ICloneable
     {

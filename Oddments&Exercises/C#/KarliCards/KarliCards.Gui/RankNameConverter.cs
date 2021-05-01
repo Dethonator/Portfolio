@@ -4,7 +4,7 @@ using System.Windows.Data;
 
 namespace KarliCards.Gui
 {
-    [ValueConversion(typeof(CardLibraryMk2.Rank), typeof(string))]
+    [ValueConversion(typeof(Ch13CardLib.Rank), typeof(string))]
     public class RankNameConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarliCards.Gui", "KarliCards.Gui\KarliCards.Gui.csproj", "{DE888787-1516-4A1D-BA3B-872B1476BA1E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardLibraryMk2", "..\CardLibraryMk2\CardLibraryMk2\CardLibraryMk2.csproj", "{D95C2B11-307A-408A-BF77-615F329BE3AE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch13CardLib", "..\CardLibraryMk2\CardLibraryMk2\Ch13CardLib.csproj", "{D95C2B11-307A-408A-BF77-615F329BE3AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
