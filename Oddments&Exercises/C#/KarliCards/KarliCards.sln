@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KarliCards.Gui", "KarliCards.Gui\KarliCards.Gui.csproj", "{DE888787-1516-4A1D-BA3B-872B1476BA1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardLibraryMk2", "..\CardLibraryMk2\CardLibraryMk2\CardLibraryMk2.csproj", "{D95C2B11-307A-408A-BF77-615F329BE3AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE888787-1516-4A1D-BA3B-872B1476BA1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE888787-1516-4A1D-BA3B-872B1476BA1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE888787-1516-4A1D-BA3B-872B1476BA1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE888787-1516-4A1D-BA3B-872B1476BA1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D95C2B11-307A-408A-BF77-615F329BE3AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D95C2B11-307A-408A-BF77-615F329BE3AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D95C2B11-307A-408A-BF77-615F329BE3AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D95C2B11-307A-408A-BF77-615F329BE3AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9D3E18E-68EF-4CC6-978A-D506022E3874}
+	EndGlobalSection
+EndGlobal

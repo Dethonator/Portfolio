@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace CardLibrary
+namespace CardLibraryMk2
 {
     public class Deck : ICloneable
     {
+        public event EventHandler LastCardDrawn;
         /// <summary>
         /// Nondefault constructor. Allows aces to be set high.
         /// </summary>
@@ -53,9 +54,13 @@ namespace CardLibrary
         public Card GetCard(int cardNum)
         {
             if (cardNum >= 0 && cardNum <= 51)
+            {
+                if ((cardNum == 51) && (LastCardDrawn != null))
+                    LastCardDrawn(this, EventArgs.Empty);
                 return cards[cardNum];
+            }
             else
-                throw (new System.ArgumentOutOfRangeException("cardNum", cardNum, "Value must be between 0 and 51."));
+                throw new CardOutOfRangeException((Cards)cards.Clone());
         }
 
         public void Shuffle()
@@ -76,7 +81,7 @@ namespace CardLibrary
                 assigned[sourceCard] = true;
                 newDeck.Add(cards[sourceCard]);
             }
-            // newDeck.CopyTo(cards);   COMMENTED OUT UNTIL FIX FOUND
+            newDeck.CopyTo(cards);
         }
     }
 }
