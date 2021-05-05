@@ -24,26 +24,18 @@ namespace KarliCards.Gui
         private GameOptions gameOptions;
         public StartGameWindow()
         {
-            if (gameOptions == null)
-            {
-                if (File.Exists("GameOptions.xml"))
-                {
-                    using (var stream = File.OpenRead("GameOptions.xml"))
-                    {
-                        var serializer = new XmlSerializer(typeof(GameOptions));
-                        gameOptions = serializer.Deserialize(stream) as GameOptions;
-                    }
-                }
-                else
-                    gameOptions = new GameOptions();
-            }
-            DataContext = gameOptions;
             InitializeComponent();
+            DataContextChanged += StartGame_DataContextChanged;
+        }
+
+        private void ChangeListBoxOptions()
+        {
             if (gameOptions.PlayAgainstComputer)
                 playersBox.SelectionMode = SelectionMode.Single;
             else
                 playersBox.SelectionMode = SelectionMode.Extended;
         }
+
         private void playerNamesListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (gameOptions.PlayAgainstComputer)
@@ -60,22 +52,27 @@ namespace KarliCards.Gui
         }
         private void okButton_Click(object sender, RoutedEventArgs e)
         {
+            var gameOptions = DataContext as GameOptions;
+            gameOptions.SelectedPlayers = new List<string>();
             foreach (string item in playersBox.SelectedItems)
             {
                 gameOptions.SelectedPlayers.Add(item);
             }
-            using (var stream = File.Open("GameOptions.xml", FileMode.Create))
-            {
-                var serializer = new XmlSerializer(typeof(GameOptions));
-                serializer.Serialize(stream, gameOptions);
-            }
-            Close();
+
+            this.DialogResult = true;
+            this.Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
             gameOptions = null;
             Close();
+        }
+
+        void StartGame_DataContextChanged(object sender, DependencyPropertyChangedEventArgs e)
+        {
+            gameOptions = DataContext as GameOptions;
+            ChangeListBoxOptions();
         }
     }
 }

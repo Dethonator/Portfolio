@@ -58,9 +58,16 @@
     <Compile Include="CardControl.xaml.cs">
       <DependentUpon>CardControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CardsInHandControl.xaml.cs">
+      <DependentUpon>CardsInHandControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GameClientWindow.xaml.cs">
       <DependentUpon>GameClientWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameDecksControl.xaml.cs">
+      <DependentUpon>GameDecksControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GameViewModel.cs" />
     <Compile Include="RankNameConverter.cs" />
     <Compile Include="StartGameWindow.xaml.cs">
       <DependentUpon>StartGameWindow.xaml</DependentUpon>
@@ -73,6 +80,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CardsInHandControl.xaml" />
     <Page Include="ControlResources.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -81,6 +89,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GameDecksControl.xaml" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -138,9 +147,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\CardLibraryMk2\CardLibraryMk2\Ch13CardLib.csproj">
+    <ProjectReference Include="..\..\CardLibraryMk2\CardLibraryMk2\CardLibraryMk2.csproj">
       <Project>{d95c2b11-307a-408a-bf77-615f329be3ae}</Project>
-      <Name>Ch13CardLib</Name>
+      <Name>CardLibraryMk2</Name>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>

@@ -2,6 +2,10 @@
 using System.ComponentModel;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using CardLibraryMk2;
+using System.Windows.Input;
+using System.IO;
+using System.Xml.Serialization;
 namespace KarliCards.Gui
 {
     [Serializable]
@@ -12,6 +16,7 @@ namespace KarliCards.Gui
         private bool playAgainstComputer = true;
         private int numberOfPlayers = 2;
         private ComputerSkillLevel computerSkill = ComputerSkillLevel.Dumb;
+
         public int NumberOfPlayers
         {
             get { return numberOfPlayers; }
@@ -21,6 +26,7 @@ namespace KarliCards.Gui
                 OnPropertyChanged(nameof(NumberOfPlayers));
             }
         }
+
         public bool PlayAgainstComputer
         {
             get { return playAgainstComputer; }
@@ -30,6 +36,7 @@ namespace KarliCards.Gui
                 OnPropertyChanged(nameof(PlayAgainstComputer));
             }
         }
+
         public ComputerSkillLevel ComputerSkill
         {
             get { return computerSkill; }
@@ -39,23 +46,24 @@ namespace KarliCards.Gui
                 OnPropertyChanged(nameof(ComputerSkill));
             }
         }
+
         public event PropertyChangedEventHandler PropertyChanged;
+
         private void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
         public ObservableCollection<string> PlayerNames
         {
-            get
-            {
-                return playerNames;
-            }
+            get { return playerNames; }
             set
             {
                 playerNames = value;
                 OnPropertyChanged("PlayerNames");
             }
         }
+
         public void AddPlayer(string playerName)
         {
             if (playerNames.Contains(playerName))
@@ -63,12 +71,31 @@ namespace KarliCards.Gui
             playerNames.Add(playerName);
             OnPropertyChanged("PlayerNames");
         }
-    }
-    [Serializable]
-    public enum ComputerSkillLevel
-    {
-        Dumb,
-        Good,
-        Cheats
+
+        public static RoutedCommand OptionsCommand = new RoutedCommand("Show Options", typeof(GameOptions),
+            new InputGestureCollection(new List<InputGesture> {new KeyGesture(Key.O, ModifierKeys.Control)}));
+
+        public void Save()
+        {
+            using (var stream = File.Open("GameOptions.xml", FileMode.Create))
+            {
+                var serializer = new XmlSerializer(typeof(GameOptions));
+                serializer.Serialize(stream, this);
+            }
+        }
+
+        public static GameOptions Create()
+        {
+            if (File.Exists("GameOptions.xml"))
+            {
+                using (var stream = File.OpenRead("GameOptions.xml"))
+                {
+                    var serializer = new XmlSerializer(typeof(GameOptions));
+                    return serializer.Deserialize(stream) as GameOptions;
+                }
+            }
+            else
+                return new GameOptions();
+        }
     }
 }

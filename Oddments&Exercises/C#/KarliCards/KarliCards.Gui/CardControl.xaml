@@ -40,7 +40,7 @@
                 <DropShadowEffect Direction="145" BlurRadius="10" ShadowDepth="0"/>
             </Rectangle.Effect>
         </Rectangle>
-        <Path Fill="#FFFFFFFF" Stretch="Fill" Stroke="{x:Null}" Margin="0,0,35,0" Data="M12,0,L47,0,C18,25 17,81 23,98 35,131 54,144 63,149 L12,149 C3,149 0,143 0,136 L0,12 C0,5 3,0 12,0 z">
+        <Path Fill="#FFFFFFFF" Stretch="Fill" Stroke="{x:Null}" Margin="0,0,35,0" Data="M12,0 L47,0 C18,25 17,81 23,98 35,131 54,144 63,149 L12,149 C3,149 0,143 0,136 L0,12 C0,5 3,0 12,0 z">
             <Path.OpacityMask>
                 <LinearGradientBrush EndPoint="0.957,1.127" StartPoint="0,-0.06">
                     <GradientStop Color="#FF000000" Offset="0"/>
