@@ -10,33 +10,31 @@ body{
     padding-top: 1%;
 }
 
-nav{
+nav {
     color: white;
-    background: dimgray;
-    border-width: 10%;
-    border-style: transparent;
+    border-width: thin;
+    border-style: hidden;
     border-radius: 10%;
     font-family: Calibri;
-    margin-right: 0%;
     line-height: 100%;
-    padding: 2%;
+    padding: 0%;
     word-wrap: break-word;
     height: 100%;
-    width: 20%;
-    position: fixed;
+    width: 25%;
+    overflow-y: auto;
 }
 
 section{
-    border: 20%, transparent;
+    border: thin, transparent;
     line-height: 150%;
     padding-top: 1%;
     padding-left: 30%;
     display: block;
-    width: 70%
+    width: 70%;
 }
 
 h1{
-    align-items: left;
+    align-items: flex-start;
     font-size: 300%;
     padding: 0;
     border: 0;
@@ -59,11 +57,14 @@ a{
 button{
     padding:4%;
     margin: 3%;
-    background-color: grey;
+    background-color: silver;
     color: white;
     font-size: 100%;
-    border-radius:50%;
+    font-weight: bold;
+    color: black;
+    border-radius:20%;
     line-height: 20%;
+    width: auto;
 }
 
 #nameline {
@@ -72,8 +73,9 @@ button{
     background-color: silver;
 }
 
-#navigation{
+#navigation {
     padding-left: 0;
+    text-align: center;
 }
 
 #content{
@@ -83,4 +85,22 @@ button{
 
 #hobbies{
     padding-bottom:2%;
+}
+
+.nav_container {
+    background-color: rgba(255,255,255,0.25);
+    border-radius: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25%;
+    height: 100%;
+    overflow-y: auto;
+    margin: auto;
+    text-align: center;
+    padding: 1%;
+}
+
+.left_align{
+    text-align: left;
 }
