@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Linq;
 namespace CardLibraryMk2
 {
+    [Serializable]
     public class Player : INotifyPropertyChanged
     {
         public int Index { get; set; }

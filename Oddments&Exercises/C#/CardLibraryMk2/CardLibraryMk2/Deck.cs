@@ -105,7 +105,7 @@ namespace CardLibraryMk2
             {
                 for (int rankVal = 1; rankVal < 14; rankVal++)
                 {
-                    var card = new Card((Suit) suitVal, (Rank) rankVal);
+                    var card = new Card((Suit)suitVal, (Rank)rankVal);
                     if (except?.Contains(card) ?? false) continue;
                     cards.Add(card);
                 }

@@ -72,8 +72,7 @@ namespace KarliCards.Gui
             OnPropertyChanged("PlayerNames");
         }
 
-        public static RoutedCommand OptionsCommand = new RoutedCommand("Show Options", typeof(GameOptions),
-            new InputGestureCollection(new List<InputGesture> {new KeyGesture(Key.O, ModifierKeys.Control)}));
+        public static RoutedCommand OptionsCommand = new RoutedCommand("Show Options", typeof(GameOptions), new InputGestureCollection(new List<InputGesture> {new KeyGesture(Key.O, ModifierKeys.Control) }));
 
         public void Save()
         {

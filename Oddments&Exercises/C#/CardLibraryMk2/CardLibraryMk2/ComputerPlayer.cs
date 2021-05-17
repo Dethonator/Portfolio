@@ -33,7 +33,7 @@ namespace CardLibraryMk2
             if (availableCard.suit == bestSuit)
                 AddCard(availableCard);
             else if (cheat == false)
-                DrawCard((deck));
+                DrawCard(deck);
             else
                 AddCard(deck.SelectCardOfSpecificSuit(bestSuit));
         }
@@ -50,10 +50,10 @@ namespace CardLibraryMk2
         {
             var cardSuits = new Dictionary<Suit, int>
             {
-                {Suit.Club, 0},
-                {Suit.Diamond, 0},
-                {Suit.Heart, 0},
-                {Suit.Spade, 0}
+                { Suit.Club, 0 },
+                { Suit.Diamond, 0 },
+                { Suit.Heart, 0 },
+                { Suit.Spade, 0 }
             };
             foreach (var card in Hand)
                 cardSuits[card.suit]++;

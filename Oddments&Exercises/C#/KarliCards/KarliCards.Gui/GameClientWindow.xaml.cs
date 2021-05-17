@@ -24,6 +24,7 @@ namespace KarliCards.Gui
             InitializeComponent();
         }
 
+
         private void CommandCanExecute(object sender, CanExecuteRoutedEventArgs e)
         {
             if (e.Command == ApplicationCommands.Close)

@@ -49,7 +49,7 @@ namespace KarliCards.Gui
             var control = source as CardsInHandControl;
             control.RedrawCards();
         }
-        public class Payload
+        private class Payload
         {
             public Deck Deck { get; set; }
             public Card AvailableCard { get; set; }
@@ -68,7 +68,6 @@ namespace KarliCards.Gui
             var data = payload as Payload;
             Dispatcher.Invoke(DispatcherPriority.Normal, new Action<Deck>(data.Player.PerformDiscard), data.Deck);
         }
-
         private void RedrawCards()
         {
             CardSurface.Children.Clear();

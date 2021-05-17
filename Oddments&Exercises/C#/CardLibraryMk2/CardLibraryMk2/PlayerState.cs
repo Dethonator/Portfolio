@@ -1,5 +1,7 @@
-﻿namespace CardLibraryMk2
+﻿using System;
+namespace CardLibraryMk2
 {
+    [Serializable]
     public enum PlayerState
     {
         Inactive,

@@ -23,7 +23,7 @@ namespace KarliCards.Gui
         private void DrawDecks()
         {
             controlCanvas.Children.Clear();
-            if (CurrentPlayer == null || Deck == null) || !GameStarted)
+            if (CurrentPlayer == null || Deck == null || !GameStarted)
             return;
             List<CardControl> stackedCards = new List<CardControl>();
             for (int i=0; i < Deck.CardsInDeck; i++)
@@ -40,11 +40,11 @@ namespace KarliCards.Gui
         }
 
         private static void OnGameStarted(DependencyObject source, DependencyPropertyChangedEventArgs e) =>
-            (source as GameDecksControl)?.DrawDecks()();
+            (source as GameDecksControl)?.DrawDecks();
         private static void OnDecksChanged(DependencyObject source, DependencyPropertyChangedEventArgs e) =>
-            (source as GameDecksControl)?.DrawDecks()();
+            (source as GameDecksControl)?.DrawDecks();
         private static void OnAvailableCardChanged(DependencyObject source, DependencyPropertyChangedEventArgs e) =>
-            (source as GameDecksControl)?.DrawDecks()();
+            (source as GameDecksControl)?.DrawDecks();
 
         private static void OnPlayerChanged(DependencyObject source, DependencyPropertyChangedEventArgs e)
         {
