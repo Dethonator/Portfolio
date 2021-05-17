@@ -1,0 +1,13 @@
+﻿<Window x:Class="ParticleColliderGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParticleColliderGUI"
+        mc:Ignorable="d"
+        Title="Particle Collision Simulator" Height="450" Width="800">
+    <Grid>
+        <Label Content="Particle Collision Simulator" HorizontalAlignment="Center" Margin="103,10,104,0" VerticalAlignment="Top" Height="100" Width="585" FontSize="48"/>
+        <ComboBox HorizontalAlignment="Left" Height="40" Margin="418,144,0,0" VerticalAlignment="Top" Width="125" SelectionChanged="ComboBox_SelectionChanged"/>
+    </Grid>
+</Window>
