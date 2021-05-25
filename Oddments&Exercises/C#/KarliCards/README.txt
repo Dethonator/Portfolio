@@ -1,1 +1,1 @@
-Have bought this up to date with the code given by the uCertify course. There are numerous errors including some typos in the given code and so I am putting this to one side to focus on my own projects.
+Have brought this up to date with the code given by the uCertify course. There are numerous errors including some typos in the given code and so I am putting this to one side to focus on my own projects.
