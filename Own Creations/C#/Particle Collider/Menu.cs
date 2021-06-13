@@ -45,6 +45,7 @@ namespace ParticleCollider
 
                 default:
                     WriteLine("Invalid choice. Please try again.");
+                    ReadKey();
                     return true;
             }
         }
