@@ -12,10 +12,13 @@ namespace SpeedDating
         static void Main(string[] args)
         {
             //Instantiation of groups
+            #region
             Girls ladies = new Girls();
             Boys gents = new Boys();
+            #endregion
 
             //Introduction and printing of names
+            #region
             WriteLine("Welcome to Speed Dating!");
             WriteLine("\nToday we are joined by:\n");
             int gCount = 1;
@@ -37,15 +40,20 @@ namespace SpeedDating
             }
             ReadKey();
             WriteLine("\n");
-            WriteLine("Four gents other than yourself are taking part today:\n");
+            WriteLine("What is your name please sir?");
+            string userName = ReadLine();
+            WriteLine("\nWelcome " + userName + ".\n");
+            ReadKey();
+            Boy[] boyGroup = gents.FormBoyGroup(userName);
+            WriteLine("The gents taking part today are:\n");
             int bCount = 1;
-            foreach (Boy b in gents.boyGroup)
+            foreach (Boy b in boyGroup)
             {
-                if (bCount < 3)
+                if (bCount < boyGroup.Length - 1)
                 {
                     Write(b.Name + ", ");
                 }
-                else if (bCount == 3)
+                else if (bCount == boyGroup.Length - 1)
                 {
                     Write(b.Name + " and ");
                 }
@@ -55,10 +63,39 @@ namespace SpeedDating
                 }
                 bCount++;
             }
+            WriteLine();
             ReadKey();
-            WriteLine("\nWhat is your name please sir?");
-            string userName = ReadLine();
-            WriteLine("\nWelcome " + userName + ".");
+            
+            #endregion
+
+            //Foreach loop for each girl to 'speed date' each boy
+            foreach (Girl g in ladies.girlGroup)
+            {
+                foreach (Boy b in boyGroup)
+                {
+                    Clear();
+                    g.Scores.Add(g.Encounter(b, userName), b);
+                }
+            }
+            //Printing of results
+            Clear();
+            foreach (Girl g in ladies.girlGroup)
+            {
+                g.Scores.Sort();
+                if (g.Scores[0].Item2.Name == userName)
+                {
+                    WriteLine("Congratulations " + userName + "! " + g.Name +
+                              " would like to have another date with you!");
+                }
+                else
+                {
+                    WriteLine(g.Name + " would like to see " + g.Scores[0].Item2.Name + " for a second date.");
+                }
+                ReadKey();
+            }
+
+            //Farewell and end of program
+            WriteLine("Thank you for taking part in Speed Dating! Have a lovely day!");
             ReadKey();
         }
     }

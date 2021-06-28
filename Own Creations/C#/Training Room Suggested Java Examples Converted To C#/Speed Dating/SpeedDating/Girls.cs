@@ -8,6 +8,6 @@ namespace SpeedDating
 {
     class Girls
     {
-        public Girl[] girlGroup = {new Girl("Sarah"), new Girl("Petunia"), new Girl("Rosemary"), new Girl("Tabetha"), new Girl("Fiona")};
+        public Girl[] girlGroup = {new Sarah(), new Petunia(), new Rosemary(), new Tabetha(), new Fiona()};
     }
 }

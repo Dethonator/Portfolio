@@ -14,5 +14,12 @@ namespace SpeedDating
         {
             this.Name = name;
         }
+
+        private readonly Random _random = new Random();
+
+        public int Answer()
+        {
+            return _random.Next(1, 4);
+        }
     }
 }

@@ -45,12 +45,17 @@
   <ItemGroup>
     <Compile Include="Boy.cs" />
     <Compile Include="Boys.cs" />
+    <Compile Include="CustomSortedList.cs" />
+    <Compile Include="Fiona.cs" />
     <Compile Include="Girl.cs" />
     <Compile Include="Girls.cs" />
+    <Compile Include="Petunia.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Question.cs" />
-    <Compile Include="Questions.cs" />
+    <Compile Include="Rosemary.cs" />
+    <Compile Include="Sarah.cs" />
+    <Compile Include="Tabetha.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
