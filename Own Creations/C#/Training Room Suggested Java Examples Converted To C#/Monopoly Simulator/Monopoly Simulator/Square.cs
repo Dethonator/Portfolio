@@ -8,11 +8,16 @@ namespace Monopoly_Simulator
 {
     public class Square
     {
-        public string _name;
+        public readonly string _name;
 
         public Square(string name)
         {
             _name = name;
+        }
+
+        public virtual string Action(Player player)
+        {
+            return "Something's gone wrong!";
         }
     }
 }

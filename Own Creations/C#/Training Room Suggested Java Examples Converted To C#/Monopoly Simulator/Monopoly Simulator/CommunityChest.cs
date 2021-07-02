@@ -8,21 +8,20 @@ namespace Monopoly_Simulator
 {
     public class CommunityChest : Square
     {
-        private new string _name;
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                _name = value;
-            }
-        }
+        //Properties
+        private new readonly string _name;
+        public string Name => _name;
+
+        //Constructor
         public CommunityChest(string name):base(name)
         {
             _name = name;
+        }
+
+        //Method for action when landed upon
+        public override string Action(Player player)
+        {
+            return "The Community Chest cards are waiting to be printed but please do enjoy the rest of the game!";
         }
     }
 }
