@@ -37,8 +37,8 @@ namespace Monopoly_Simulator
         {
             if (_ownedBy != player)
             {
-                WriteLine("Would you like to buy " + _name + "? (Y/N)");
-                string response = Convert.ToString(ReadLine());
+                WriteLine("Would you like to buy " + _name + " for " + "£" + _price + "? (Y/N)");
+                string response = ReadLine().ToUpper();
                 if (response == "Y" && player.Money >= _price)
                 {
                     _ownedBy = player;

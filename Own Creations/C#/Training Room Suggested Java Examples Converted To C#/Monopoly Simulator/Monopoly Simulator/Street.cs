@@ -167,8 +167,8 @@ namespace Monopoly_Simulator
         {
             if (_ownedBy != player)
             {
-                WriteLine("Would you like to buy " + _name + "? (Y/N)");
-                string response = Convert.ToString(ReadLine());
+                WriteLine("Would you like to buy " + _name + " for " + "£" + _streetPrice + "? (Y/N)");
+                string response = ReadLine().ToUpper();
                 if (response == "Y" && player.Money >= _streetPrice)
                 {
                     _ownedBy = player;
@@ -180,7 +180,7 @@ namespace Monopoly_Simulator
                     WriteLine("Sorry but you don't have enough money at the moment.");
                 }
             }
-            return "";
+            return null;
         }
     }
 }

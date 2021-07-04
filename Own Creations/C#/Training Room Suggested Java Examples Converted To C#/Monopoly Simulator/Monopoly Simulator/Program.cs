@@ -16,19 +16,47 @@ namespace Monopoly_Simulator
             WriteLine("Welcome to Monopoly!\n");
             WriteLine("Please enter your name: ");
             player.Name = ReadLine();
-            WriteLine("\nGreetings " + player.Name);
+            WriteLine("\nGreetings " + player.Name + ".");
             WriteLine("\nYou start the game from the GO square. You have £1500 and two six-sided dice.");
             
             while (true)
             {
-                WriteLine("Money: " + player.Money.ToString());
-                WriteLine("\nPlease press any key to roll the dice.\n");
+                int menuChoice;
+                WriteLine("\nMoney: " + player.Money.ToString());
+                WriteLine("\nPlease choose an option:\n");
+                WriteLine("1 - Roll the dice\n2 - Build\n3 - Use a card\n4 - Exit Monopoly");
+                try
+                {
+                    menuChoice = Convert.ToInt32(ReadLine());
+                }
+                catch (Exception)
+                {
+                    WriteLine("That is not a valid choice. Rolling the dice.");
+                    menuChoice = 1;
+                }
+
+                switch (menuChoice)
+                {
+                    case 1:
+                        int move = dice.Roll();
+                        player.Location += move;
+                        Square currentSquare = GameBoard[player.Location];
+                        WriteLine("You have rolled " + move + " and landed on " + currentSquare._name + "\n");
+                        WriteLine(currentSquare.Action(player));
+                        break;
+                    case 2:
+                        WriteLine("Functionality awaiting completion");
+                        break;
+                    case 3:
+                        WriteLine("Functionality awaiting completion");
+                        break;
+                    case 4:
+                        System.Environment.Exit(0);
+                        break;
+                        
+                }
+                WriteLine("\nPress any key to continue");
                 ReadKey();
-                int move = dice.Roll();
-                player.Location += move;
-                Square currentSquare = GameBoard[player.Location];
-                WriteLine("You have rolled " + move + " and landed on " + currentSquare._name + "\n");
-                WriteLine(currentSquare.Action(player));
             }
         }
     }

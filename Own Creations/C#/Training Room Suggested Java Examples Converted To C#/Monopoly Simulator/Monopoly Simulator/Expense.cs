@@ -25,18 +25,19 @@ namespace Monopoly_Simulator
             {
                 case "Income Tax":
                     player.Money -= 200;
-                    break;
+                    return "You are charged £200";
                 case "Electric Company":
                     player.Money -= 150;
-                    break;
+                    return "You are charged £150";
                 case "Water Works":
                     player.Money -= 150;
-                    break;
+                    return "You are charged £150";
                 case "Super Tax":
                     player.Money -= 100;
-                    break;
+                    return "You are charged £100";
+                default:
+                    return null;
             }
-            return "Holding;";
         }
     }
 }

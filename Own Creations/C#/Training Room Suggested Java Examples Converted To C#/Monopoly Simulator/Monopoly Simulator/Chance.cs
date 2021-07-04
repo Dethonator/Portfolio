@@ -21,7 +21,7 @@ namespace Monopoly_Simulator
         //Method for action when landed upon
         public override string Action(Player player)
         {
-            return "The Community Chest cards are waiting to be printed but please do enjoy the rest of the game!";
+            return "The Chance cards are waiting to be printed but please do enjoy the rest of the game!";
         }
     }
 }
