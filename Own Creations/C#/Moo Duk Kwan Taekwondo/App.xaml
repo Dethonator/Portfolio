@@ -1,9 +1,0 @@
-﻿<Application x:Class="Moo_Duk_Kwan_Taekwondo.App"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Moo_Duk_Kwan_Taekwondo"
-             StartupUri="MainWindow.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
-</Application>
