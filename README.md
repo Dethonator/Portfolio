@@ -1,2 +1,2 @@
 # Portfolio
-Portfolio of exercises done throughout the Training Room course and my own creations which are being developed over time.
+Portfolio of exercises/code from the Training Room Software Developer course, degree with the OU and my own projects.
